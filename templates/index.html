@@ -1,0 +1,341 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Internship Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="{{ url_for('static',filename = 'css/bootstrap.min.css')  }}" rel="stylesheet">
+
+    <title>Machine Learning Lab</title>
+
+    <style>
+        h2,
+        h4 {
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            color: rgb(4, 9, 56);
+
+        }
+
+        p {
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 5px;
+            color: rgb(4, 9, 56);
+            font-size: 20px;
+            font-style: italic;
+            text-decoration: double;
+        }
+
+        .form1 {
+            /* background: #000000; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: fit-content;
+            flex-direction: column;
+            /* width: 500px; */
+            border-left-width: 250px;
+            border: 2px solid #ccc;
+            /* padding: 30px; */
+            background: rgb(239, 237, 237);
+            font-family: 'Times New Roman', Times, serif;
+            padding: 20px;
+            /* border-radius: 15px; */
+            /* margin-right: 100px; */
+        }
+
+        .row {
+            width: 500px;
+            /* margin-left: 70px; */
+        }
+
+        .head {
+            color: #000;
+            background-color: rgb(252, 238, 247);
+            vertical-align: top;
+            width: 100%;
+        }
+
+        .tail {
+            padding-top: 17px;
+            color: #000;
+            background-color: rgb(254, 228, 246);
+            vertical-align: bottom;
+            font-size: 20px;
+        }
+
+        .ans {
+            color: #ffffff;
+        }
+
+        button {
+            width: 200px;
+            margin-top: 15px;
+        }
+
+        /* style="color: #FFF;background-color: #000;" */
+    </style>
+</head>
+
+<body>
+
+    <nav style="width: 50%;">
+        <a class="  navbar-brand" href="#" style="margin-left: 0px; margin-top: 0px; ">
+            <img style="max-height:150px; width:100%;margin-left: 350px;" src="{{ url_for('static',filename = 'image/PIET logo with tagline.jpg')  }}"
+                class="img-responsive">
+            <br>
+            <div style="background-color:rgb(200, 2, 2); width:1520px">
+                <a href="/aboutusnew" style="color: rgb(254, 253, 253); margin-right: 10px; font-size: 20px; margin-left: 20px;">ABOUT US</a>
+            </div>
+        </a>
+    </nav>
+
+
+
+    <div class="container">
+
+
+        <div class="head" style="margin-top:30px;">
+            <h2 style="font-size: 40px;">
+                Summer Internship Project based on Machine Learning and Data
+            </h2>
+            <p style="font-size: 30px;">
+                This project based on stroke prediction with all classification models
+            </p>
+        </div>
+
+
+
+        <div class="row" style="margin-left:0px; width:1300px;">
+
+
+            <div class="col-xs-12 col-md-12">
+                <div class="card mb-3">
+                    <div class="card">
+                        <img style="max-height: 300px;" src="{{ url_for('static',filename = 'image/doc1.PNG')  }}" class="card-img-top" alt="...">
+
+                        <div class="card-body">
+                        
+                            <table style="text-align:left;">
+                                <tr>
+                                    <th style="margin-right:200px; padding: 30px; border-radius: 30px;">
+                                        <!-- Main Input For Receiving Query to our ML -->
+                                      
+
+                                            <div class="form1" >
+                                                <form action="{{ url_for('predict')}} " method="get"
+                                                    >
+
+                                                    <div >
+                                                        <p>Fill this form</p>
+                                                    </div>
+
+                                                    <div class="col-12" style="color: rgb(7, 5, 5);">
+                                                       
+                                                        <label for="inputState" class="form-label">Gender</label>
+                                                        <select id="Gender" name="Gender" step="any" class="form-select"
+                                                            required>
+                                                            <option value='1'>Male</option>
+                                                            <option value='0'>Female</option>
+                                                        </select>
+                                                        <br>
+
+
+
+                                                        <label for="floatingInput" class="form-label">Age</label>
+                                                        <input type="number" class="form-control" id="Age" name="Age"
+                                                            step="any" required="required" placeholder="Enter your age">
+                                                        <br>
+
+
+
+                                                        <label for="floatingInput"
+                                                            class="form-label">Hypertension</label>
+                                                        <select id="Hypertension" name="Hypertension" step="any"
+                                                            class="form-select" required>
+                                                            <option>High</option>
+                                                            <option>Low</option>
+                                                        </select>
+                                                        <br>
+
+
+
+                                                        <label for="floatingInput" class="form-label"> Any Heart_disease
+                                                            history</label>
+                                                        <select id="Heart_disease" name="Heart_disease" step="any"
+                                                            class="form-select" required>
+                                                            <option>Yes</option>
+                                                            <option>No</option>
+                                                        </select>
+                                                        <br>
+
+
+
+                                                        <label for="floatingInput" class="form-label">Married</label>
+                                                        <select id="Married" name="Married" step="any"
+                                                            class="form-select" required>
+                                                            <option>Yes</option>
+                                                            <option>No</option>
+                                                        </select>
+                                                        <br>
+
+
+
+                                                        <label for="floatingInput" class="form-label">Work_type</label>
+                                                        <select id="Work_type" name="Work_type" step="any"
+                                                            class="form-select" required>
+                                                            <option>Private</option>
+                                                            <option>Government</option>
+                                                            <option>Self emplyed</option>
+                                                            <option>children</option>
+                                                        </select>
+                                                        <br>
+
+
+
+
+                                                        <label for="floatingInput"
+                                                            class="form-label">Residence_type</label>
+                                                        <select id="Residence_type" name="Residence_type" step="any"
+                                                            class="form-select" required>
+                                                            <option>rural</option>
+                                                            <option>Urban</option>
+                                                        </select>
+                                                        <br>
+
+
+
+                                                        <label for="floatingInput"
+                                                            class="form-label">Avg_glucose_level</label>
+                                                        <input type="number" class="form-control" id="Avg_glucose_level"
+                                                            name="Avg_glucose_level" step="any" required="required"
+                                                            placeholder="Enter the estimated salary">
+                                                        <br>
+
+
+
+                                                        <label for="inputState" class="form-label">Body Mass Index</label>
+                                                        <input type="number" class="form-control" id="bmi" name="bmi"
+                                                            step="any" required="required"
+                                                            placeholder="Enter the estimated salary">
+                                                        <br>
+
+
+
+
+                                                        <label for="floatingInput"
+                                                            class="form-label">Smoking_status</label>
+                                                        <select id="Smoking_status" name="Smoking_status" step="any"
+                                                            class="form-select" required>
+                                                            <option value='0'>Rarely</option>
+                                                            <option value='1'>Formerly</option>
+                                                            <option value='2'>never</option>
+                                                        </select>
+                                                        <br>
+
+                                                        <label for="floatingInput"
+                                                            class="form-label">choose_model</label>
+                                                        <select id="Model" name="Model" step="any" class="form-select"
+                                                            required>
+                                                            <option value="Decision_Tree">Decision_Tree</option>
+                                                            <option value="KNN">KNN</option>
+                                                            <option value="SVM">SVM</option>
+                                                            <option value="Random_Forest">Random_Forest</option>
+                                                            <option value="Naive_Bayes">Naive_Bayes</option>
+                                                        </select>
+                                                        <br>
+
+                                                    </div>
+
+                                                    <div class="col-12">
+                                                        <button type="submit" value="predict" name="predict"
+                                                            class="btn btn-outline-danger"
+                                                            style="color:black;">predict</button>
+                                                    </div>
+                                                </form>
+
+
+                                                <p style="color:black;">
+                                                    {{prediction_text}}
+                                                    {{extra_text}}
+                                                </p>
+                                            </div>
+                                            <br><br><br><br><br><br><br>
+                                    </th>
+                                    <th style="margin-bottom:200px; padding: 40px; ">
+                                        <p style="font-size:40px;">We take care of your heart</p>
+                                        <img style="max-height: 300px;max-width:1200px; margin-right: 100px; " src="{{ url_for('static',filename = 'image/heart.PNG')  }}"
+                                            class="card-img-top" alt="...">
+                                            <div style="font-family:'Times New Roman', Times, serif;">
+                                        <p style="text-align: justify; ">The negative impact of stroke in society has led to concerted efforts to improve the management and diagnosis of stroke. With an increased synergy between technology and medical diagnosis, caregivers create opportunities for better patient management by systematically mining and archiving the patients medical records. Therefore, it is vital to study the interdependency of these risk factors in patients health records and understand their relative contribution to stroke prediction. This paper systematically analyzes the various factors in electronic health records for effective stroke prediction.Using various statistical techniques and principal component analysis, we identify the most important factors for stroke prediction. We conclude that age, heart disease, average glucose level, and hypertension are the most important factors for detecting stroke in patients.</p>
+                                    </div>
+                                    <br><br>
+
+                                        <p style="text-align: justify; font-family: 'Times New Roman', Times, serif; font-size: 30px;"> You can predict your stroke chances by filling the form nearby with appropriate details.</b> </p>
+                                        
+                                            <br><br><br><br>
+                                            <br><br><br><br>
+
+                                    </th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="col-md-12">
+            <center>
+                <h3 class="section-title" style="text-align: center;">Sponsored by</h3>
+            </center>
+<div style="margin-left: 350px;">
+            <table>
+                <tr >
+                    
+                    <th> <img style="max-height: 300px;" src="{{ url_for('static',filename = 'image/AICTEIdeaLabFooterLogo.png')  }}" ></th>
+                    <th> <img style="max-height: 300px;" src="{{ url_for('static',filename = 'image/nbanew.png')  }}" ></th>
+                </tr>
+            </table>
+        </div>
+            <br><br><br><br><br>
+            <div class="fixed-bottom ">
+                <div class="bg-secondary " style="min-height: 40px;">
+<div style="background-color:rgb(150, 2, 2);">
+                    <marquee style="color:rgb(251, 250, 250); margin-top: 7px;">
+                        <h9>Developed by Department of Computer Engineering, PIET</h9>
+                    </marquee>
+                </div>
+                </div>
+            </div>
+            <!-- change later-->
+            <script src="{{ url_for('static',filename = 'js/bootstrap.bundle.min.js')  }}"></script>
+
+            <div class="tail">
+                <h4>
+                    Developed by Gargi Singh Tanwar
+                </h4>
+
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+                crossorigin="anonymous"></script>
+
+</body>
+
+</html>
