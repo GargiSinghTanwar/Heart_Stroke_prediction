@@ -31,32 +31,32 @@ def aboutusnew():
 @app.route('/predict',methods=['GET'])
 def predict():
     
-    Gender = int(request.args.get('Gender'))
+    Gender = int(request.args.get('Gender') or 1)
       
       
     Age = int(request.args.get('Age'))
     
     
-    hypertension = int(request.args.get('hypertension') or 0)
+    hypertension = (request.args.get('hypertension') or 1)
     if hypertension=="High":
       hypertension = 1
     else:
       hypertension = 0
     
-    heart_disease = int(request.args.get('heart_disease') or 0)
+    heart_disease = (request.args.get('heart_disease') or 1)
     if heart_disease=="Yes":
       heart_disease = 1
     else:
       heart_disease = 0
       
       
-    married = int(request.args.get('married') or 0)
+    married = (request.args.get('married') or 1)
     if married=="Yes":
       married = 1
     else:
       married = 0
       
-    work_type = int(request.args.get('work_type') or 0)
+    work_type = (request.args.get('work_type') or 1)
     if work_type=="children":
       work_type = 1
     elif work_type=="Private":
@@ -67,17 +67,23 @@ def predict():
       work_type==0
       
       
-    residence_type = int(request.args.get('residence_type') or 0)
+    residence_type = (request.args.get('residence_type') or 1)
     if residence_type=="Urban":
       residence_type = 1
     else:
       residence_type==0
     
-    Avg_glucose_level = int(request.args.get('Avg_glucose_level'))
-    bmi = float(request.args.get('bmi'))
+    Avg_glucose_level = int(request.args.get('Avg_glucose_level') )
+    bmi = int(request.args.get('bmi'))
     
     
-    Smoking_status = int(request.args.get('Smoking_status') or 0)
+    Smoking_status = int(request.args.get('Smoking_status') or 1)
+    if Smoking_status=="Formerly":
+      Smoking_status = 1
+    elif Smoking_status=="never":
+      Smoking_status = 2
+    else:
+      Smoking_status==0
     
     
     
@@ -101,7 +107,7 @@ def predict():
       prediction = classifier_major_NB.predict([[Gender, Age, hypertension, heart_disease, married, work_type, residence_type, Avg_glucose_level, bmi, Smoking_status]])
 
     
-    if prediction == [1]:
+    if prediction == [0]:
       return render_template('index.html', prediction_text='stroke chances', extra_text =" as per Prediction by model " + Model)
     
     else:
