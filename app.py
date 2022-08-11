@@ -26,6 +26,10 @@ def home():
 def aboutusnew():
     return render_template('aboutusnew.html')
 
+@app.route('/new')
+def new():
+    return render_template("new.html")
+
 
   
 @app.route('/predict',methods=['GET'])
@@ -107,7 +111,7 @@ def predict():
       prediction = classifier_major_NB.predict([[Gender, Age, hypertension, heart_disease, married, work_type, residence_type, Avg_glucose_level, bmi, Smoking_status]])
 
     
-    if prediction == [0]:
+    if prediction == [1]:
       return render_template('index.html', prediction_text='stroke chances', extra_text =" as per Prediction by model " + Model)
     
     else:
