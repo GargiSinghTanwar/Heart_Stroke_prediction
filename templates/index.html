@@ -80,6 +80,7 @@
         .col-3 {
             text-align: left;
             height: 300px;
+            padding: 30px;
         }
 
         .col-4 {
@@ -132,7 +133,6 @@
         .col-12 {
             color: rgb(5, 4, 4);
             margin-left: 20px;
-            margin-top: 20px;
             width: 450px;
             height: 30px;
         }
@@ -214,7 +214,7 @@
                 Summer Internship Project
             </h2>
             <p style="font-size: 30px;">
-                This project based on Heart stroke prediction with all classification models
+                This project based on Brain stroke prediction with all classification models
             </p>
         </div>
         <hr>
@@ -229,7 +229,7 @@
                                 <tr>
                                     <th>
                                         <div class="col-3">
-                                            <img src="{{ url_for('static',filename = 'image/ezgif.com-gif-maker.gif')}}" class="col-3">
+                                            <img src="{{ url_for('static',filename = 'image/brain.gif')}}" class="col-3">
                                         </div>
                                     </th>
                                     <th>
@@ -354,7 +354,7 @@
                                                     </li>
                                                 </th>
                                                 <th>
-
+                                                    <br>
                                                     <li>
                                                         <label for="floatingInput"
                                                             class="form-label" style="margin-top:15px">Residence_type</label><br>
@@ -370,7 +370,7 @@
                                                             class="form-label">Avg_glucose_level</label><br>
                                                         <input type="text" class="form-select" id="Avg_glucose_level"
                                                             name="Avg_glucose_level" step="any" required="required"
-                                                            placeholder="Enter the estimated salary">
+                                                            placeholder="Enter your average Glucose level">
                                                     </li>
                                                     <br>
                                                     <li>
@@ -378,7 +378,7 @@
                                                             Index</label><br>
                                                         <input type="text" class="form-select" id="bmi" name="bmi"
                                                             step="any" required="required"
-                                                            placeholder="Enter the estimated salary">
+                                                            placeholder="Enter Body Mass">
                                                     </li>
                                                     <br>
                                                     <li>
@@ -394,7 +394,7 @@
                                                     <br>
                                                     <li>
                                                         <label for="floatingInput"
-                                                            class="form-label">choose_model</label><br>
+                                                            class="form-label">Choose_model</label><br>
                                                         <select id="Model" name="Model" step="any" class="form-select"
                                                             required>
                                                             <option value="Decision_Tree">Decision_Tree</option>
@@ -437,6 +437,36 @@
         <br>
 
     </div>
+    
+    
+    
+    <div style="width:1400px; font-style: justify; margin-top:100px; margin-left:50px;">
+
+        <hr>
+        <h2 style="text-align:center; font-size:40px; ">When to see a doctor</h2>
+        
+        
+        <p style="text-align:left; padding: 30px; font-family: 'Times New Roman', Times, serif;">
+            If you or someone you're with may be having a stroke, pay particular attention to the time the symptoms
+            began. Some treatment options are most effective when given soon after a stroke begins.<br><br>
+
+            Signs and symptoms of stroke include:  <br><br>
+
+            <b>Trouble speaking and understanding what others are saying.</b><br> You may experience confusion, slur words or have
+            difficulty understanding speech.<br><br>
+            <b>Paralysis or numbness of the face, arm or leg.</b><br> You may develop sudden numbness, weakness or paralysis in the
+            face, arm or leg. This often affects just one side of the body. Try to raise both your arms over your head
+            at the same time. If one arm begins to fall, you may be having a stroke. Also, one side of your mouth may
+            droop when you try to smile.<br><br>
+            <b>Problems seeing in one or both eyes. </b><br>You may suddenly have blurred or blackened vision in one or both eyes,
+            or you may see double.<br><br>
+            <b>Headache.</b><br> A sudden, severe headache, which may be accompanied by vomiting, dizziness or altered
+            consciousness, may indicate that you're having a stroke.<br><br>
+            <b>Trouble walking.</b><br> You may stumble or lose your balance. You may also have sudden dizziness or a loss of
+            coordination.<br><br>
+        </p>
+    </div>
+    
 
 
     <div class="col-foot-12">
