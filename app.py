@@ -93,16 +93,16 @@ def predict():
     Model = (request.args.get('Model'))
 
     if Model=="Decision_Tree":
-      prediction = classifier_major_dt.predict([[Gender, Age, hypertension, heart_disease, married, work_type, residence_type, Avg_glucose_level, bmi, Smoking_status]])
+      prediction = classifier_major_NB.predict([[Gender, Age, hypertension, heart_disease, married, work_type, residence_type, Avg_glucose_level, bmi, Smoking_status]])
 
     elif Model=="KNN":
-      prediction = classifier_major_knn.predict([[Gender, Age, hypertension, heart_disease, married, work_type, residence_type, Avg_glucose_level, bmi, Smoking_status]])
+      prediction = classifier_major_NB.predict([[Gender, Age, hypertension, heart_disease, married, work_type, residence_type, Avg_glucose_level, bmi, Smoking_status]])
 
     elif Model=="SVM":
-      prediction = classifier_major_svm.predict([[Gender, Age, hypertension, heart_disease, married, work_type, residence_type, Avg_glucose_level, bmi, Smoking_status]])
-
+      prediction = classifier_major_NB.predict([[Gender, Age, hypertension, heart_disease, married, work_type, residence_type, Avg_glucose_level, bmi, Smoking_status]])
+    
     elif Model=="Random_Forest":
-      prediction = classifier_major_rf.predict([[Gender, Age, hypertension, heart_disease, married, work_type, residence_type, Avg_glucose_level, bmi, Smoking_status]])
+      prediction = classifier_major_NB.predict([[Gender, Age, hypertension, heart_disease, married, work_type, residence_type, Avg_glucose_level, bmi, Smoking_status]])
 
     elif Model=="Naive_Bayes":
       prediction = classifier_major_NB.predict([[Gender, Age, hypertension, heart_disease, married, work_type, residence_type, Avg_glucose_level, bmi, Smoking_status]])
