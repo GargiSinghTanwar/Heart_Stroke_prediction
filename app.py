@@ -27,6 +27,11 @@ def aboutusnew():
 def new():
     return render_template("new.html")
 
+@app.route('/QR')
+def OR():
+    return render_template("QR.html")
+
+
   
 @app.route('/predict',methods=['GET'])
 def predict():
