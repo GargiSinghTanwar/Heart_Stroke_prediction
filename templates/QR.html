@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .navbar {
+            text-align: center;
+            width: 100px;
+
+        }
+
+        .a {
+            color: rgb(254, 253, 253);
+            padding: 3px;
+            padding-left: 35px;
+            font-size: 25px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .nav_image {
+            height: 230px;
+            width: 700px;
+            margin-left: 400px;
+        }
+
+        .navbar_a {
+            width: 1500px;
+            height: 50px;
+            background-color: rgb(184, 7, 7);
+            text-align: left;
+        }
+
+        @media only screen and (min-width:200px) and (max-width:2000px){
+
+        .divtag{
+            display: block;
+        }
+
+        .navbar{
+            display: block;
+        }
+
+        }
+
+        
+
+    </style>
+
+</head>
+<body>
+
+    <nav class="navbar">
+        <img src="{{ url_for('static',filename = 'image/PIET logo with tagline.jpg')}}" class="nav_image">
+        <br>
+        <div class="navbar_a">
+            <a href="/index" class="a">Home</a>
+        </div>
+    </nav>
+    <div class="divtag" style="width:1500px;">
+        <div style=" margin-top:50px; text-align: center; width: 1500px;" class="divtag">
+         
+        <p class="divtag" style="text-align:center; font-style: italic; font-size:20px; margin-top: 100px; font-family:'Times New Roman', Times, serif;"> QR Code Scanner </p>
+
+        <img src="{{ url_for('static',filename = 'image/heart.PNG')}}" style="height:400px; width:650px; margin-left: 450px;" class="divtag">
+        
+        <br>
+    
+    </div>
+
+</body>
+</html>
